@@ -16,4 +16,3 @@ function getPrefixGerated( $value ) {
 	
 	return $text;
 }
-echo getPrefixGerated('Agencia Planos');
