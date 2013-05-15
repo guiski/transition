@@ -1,0 +1,72 @@
+$m = microtime(true);
+
+		$img = $input;
+
+		// Size
+		$s = getimagesize( $img );
+
+		// Resize dimensions
+		$w = $s[0];
+		$h = $s[1];
+
+		// Source
+		$i = imagecreatefrompng( $img );
+		// Destination
+		$d = imagecreatetruecolor($w,$h);
+
+		// if this has no alpha transparency defined as an index
+		// it could be a palette image??
+		$palette = (imagecolortransparent($i)<0);
+
+		// If this has transparency, or is defined
+		if(!$palette||(ord(file_get_contents ($img, false, null, 25, 1)) & 4)){
+			print ("Is Alpha");
+			// Has indexed transparent color
+			if(($tc=imagecolorstotal($i))&&$tc<=256)
+				imagetruecolortopalette($d, false, $tc);
+			imagealphablending($d, false);
+			$alpha = imagecolorallocatealpha($d, 0, 0, 0, 127);
+			imagefill($d, 0, 0, $alpha);
+			imagesavealpha($d, true);
+			var_dump(microtime(true)-$m);
+		}
+
+		// Resample Image
+		//print ("Resampling Image");
+		//imagecopyresampled($d, $i, 0, 0, 0, 0, $w, $h, $s[0], $s[1]);
+		//var_dump(microtime(true)-$m);
+
+		// Did the original PNG supported Alpha?
+		if((ord(file_get_contents ($img, false, null, 25, 1)) & 4)){
+			print ("Testing is there is Alpha transparency");
+
+			// we dont have to check every pixel.
+			// We take a sample of 2500 pixels (for images between 50X50 up to 500X500), then 1/100 pixels thereafter.
+			$dx = min(max(floor($w/50),1),10);
+			$dy = min(max(floor($h/50),1),10);
+
+			$palette = true;
+			for($x=0;$x<$w;$x=$x+$dx){
+				for($y=0;$y<$h;$y=$y+$dy){
+					$col = imagecolorsforindex($d, imagecolorat($d,$x,$y));
+					// How transparent until it's actually visible
+					// I reackon atleast 10% of 127 before its noticeable, e.g. ~13
+					if($col['alpha']>13){
+						//print_r($col);
+						$palette = false;
+						break 2;
+					}
+				}
+			}
+			var_dump(microtime(true)-$m);
+			var_dump( !$palette );
+		}
+
+		if($palette){
+			print "Converting to indexed colors";
+			imagetruecolortopalette($d, false, 256);
+			var_dump(microtime(true)-$m);
+		}
+
+		// Save file, quality=9, Add filters... although sometimes better without.
+		imagepng( $d, $output, 9, PNG_ALL_FILTERS);
