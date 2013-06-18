@@ -10,18 +10,19 @@
 </div>
 <!-- e# container_12 -->
 </body>
-</html><?php/* $cntACmp =ob_get_contents(); 
+</html>
+<?php
+// $cntACmp=ob_get_contents(); 
 
-ob_end_clean(); 
+// ob_end_clean(); 
 
-$cntACmp=str_replace("\n",' ',$cntACmp); 
+// $cntACmp=str_replace("\n",' ',$cntACmp); 
 
-$cntACmp=ereg_replace('[[:space:]]+',' ',$cntACmp); 
+// $cntACmp=ereg_replace('[[:space:]]+',' ',$cntACmp); 
 
-ob_start("ob_gzhandler"); 
+// ob_start("ob_gzhandler"); 
 
-echo $cntACmp; 
+// echo $cntACmp; 
 
-ob_end_flush();*/
-
+// ob_end_flush();
 ?>
