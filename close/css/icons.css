@@ -1,0 +1,36 @@
+.social-icon {
+	display: 					inline-block;
+	margin: 					0 5px 5px 0;
+	overflow: 					hidden;
+	width: 						40px;
+	height: 					40px;
+	-webkit-border-radius: 		1px;
+	   -moz-border-radius: 		1px;
+			border-radius: 		1px;
+}
+.social-icon a {
+	display: 					inline-block;
+	width: 						40px;
+	height: 					40px;
+	text-indent: 				-9999px;
+	background-position: 		0px 0px;
+	background-repeat: 			no-repeat;
+	-webkit-transition: 		all 0.2s ease 0s;
+	   -moz-transition: 		all 0.2s ease 0s;
+		 -o-transition: 		all 0.2s ease 0s;
+			transition: 		all 0.2s ease 0s;
+
+	background: 				url(../images/icons/sprite.png) no-repeat 0 0;
+}
+
+.social-facebook a 			{ background-position: 0 0; }
+.social-facebook a:hover 	{ background-position: 0 -41px; }
+
+.social-twitter a 			{ background-position: -42px 0; }
+.social-twitter a:hover 	{ background-position: -42px -41px; }
+
+.social-email a 			{ background-position: -84px 0; }
+.social-email a:hover 		{ background-position: -84px -41px; }
+
+.social-rss a 				{ background-position: -126px 0; }
+.social-rss a:hover 		{ background-position: -126px -41px; }
