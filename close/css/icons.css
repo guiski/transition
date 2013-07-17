@@ -34,3 +34,18 @@
 
 .social-rss a 				{ background-position: -126px 0; }
 .social-rss a:hover 		{ background-position: -126px -41px; }
+
+.social-mobile a 			{ background-position: -168px 0; }
+.social-mobile a:hover 		{ background-position: -168px -41px; }
+
+.social-apple a 			{ background-position: -210px 0; }
+.social-apple a:hover 		{ background-position: -210px -41px; }
+
+.social-android a 			{ background-position: -252px 0; }
+.social-android a:hover		{ background-position: -252px -41px; }
+
+.social-html5 a 			{ background-position: -294px 0; }
+.social-html5 a:hover		{ background-position: -294px -41px; }
+
+.social-css a 				{ background-position: -336px 0; }
+.social-css a:hover			{ background-position: -336px -41px; }
