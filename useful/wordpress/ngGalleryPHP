@@ -1,0 +1,9 @@
+<?php
+      $gallery = $wpdb->get_results("SELECT * FROM ".$wpdb->base_prefix."ngg_gallery WHERE gid=1");
+      $gallery = $gallery[0];
+      $pictures = $wpdb->get_results("SELECT * FROM ".$wpdb->base_prefix."ngg_pictures WHERE galleryid=".$gallery->gid." ORDER BY RAND()");
+      foreach($pictures AS $pic) {
+        $data = unserialize($pic->meta_data);
+        echo '<img src="'.get_bloginfo('home').'/'.$gallery->path.'/'.$pic->filename.'" alt="'.$pic->image_slug.'"title="'.$pic->image_slug.'" />';
+      }
+      ?>
