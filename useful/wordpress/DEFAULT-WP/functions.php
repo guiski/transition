@@ -4,6 +4,29 @@ set_include_path(get_include_path() . PATH_SEPARATOR . dirname(__FILE__) . DIREC
 require_once 'Zend/Loader/Autoloader.php';
 $autoloader = Zend_Loader_Autoloader::getInstance();*/
 
+if( !is_admin()){
+    wp_deregister_script('jquery');
+    // wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"), false, '1.3.2');
+    wp_register_script('jquery', '', false);
+    wp_enqueue_script('jquery');
+}
+
+// Add options (customFields) menu
+if(function_exists("register_options_page"))
+{
+    register_options_page('Banner');
+    register_options_page('Compra VIP');
+    register_options_page('Seguradoras');
+ }
+
+function setContactToken () {
+    $token = md5(uniqid(microtime(), true));
+
+    $_SESSION['contact_token'] = $token;
+
+    return $token;
+}
+
 function is_array_empty ($arr) {
 	if (is_array($arr)) {
 		foreach ($arr AS $key => $value){
