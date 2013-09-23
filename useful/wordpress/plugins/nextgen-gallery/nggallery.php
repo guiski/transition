@@ -99,7 +99,7 @@ if (!class_exists('nggLoader')) {
 			add_action( 'init', array(&$this, 'test_head_footer_init' ) );
 
 			// Show NextGEN version in header
-			add_action('wp_head', array('nggGallery', 'nextgen_version') );
+			// add_action('wp_head', array('nggGallery', 'nextgen_version') );
 
 			// Handle upload requests
 			add_action('init', array(&$this, 'handle_upload_request'));
@@ -139,8 +139,8 @@ if (!class_exists('nggLoader')) {
 				add_action('parse_request',  array(&$this, 'check_request') );
 
 				// Add the script and style files
-				add_action('wp_enqueue_scripts', array(&$this, 'load_scripts') );
-				add_action('wp_enqueue_scripts', array(&$this, 'load_styles') );
+				// add_action('wp_enqueue_scripts', array(&$this, 'load_scripts') );
+				// add_action('wp_enqueue_scripts', array(&$this, 'load_styles') );
 
 			}
 		}
