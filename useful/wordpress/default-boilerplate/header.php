@@ -17,6 +17,7 @@ DEFINE( 'SITE_URL', home_url() );
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/vnd.microsoft.icon" href="<?php echo TEMPLATE_URL; ?>/favicon.ico"/>
   <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo TEMPLATE_URL; ?>/favicon.ico"/>
+  <meta name="author" content="Guilherme Budnieswski - Agencia Planos" />
 
   <title>Document</title>
 

@@ -2,6 +2,21 @@ html,
 body {
 	background: url('../img/bg/body.jpg');
 }
+ul,
+li {
+   margin: 0;
+   padding: 0;
+}
+.alignleft {
+   float: left !important;
+}
+.alignright {
+   float: right !important;
+}
+.aligncenter {
+   margin: 0 auto !important;
+   display: block;
+}
 
 /* ==========================================================================
    Default
