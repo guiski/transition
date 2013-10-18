@@ -21,8 +21,8 @@ DEFINE( 'SITE_URL', home_url() );
 
   <title>Document</title>
 
-  <link rel="stylesheet" href="<?php echo TEMPLATE_URL; ?>/css/normalize.css">
-  <link rel="stylesheet" href="<?php echo TEMPLATE_URL; ?>/css/boilerplate.css">
+  <link rel="stylesheet" href="<?php echo TEMPLATE_URL; ?>/css/normalize.min.css">
+  <link rel="stylesheet" href="<?php echo TEMPLATE_URL; ?>/css/boilerplate.min.css">
   <link rel="stylesheet" href="<?php echo TEMPLATE_URL; ?>/css/main.css">
   <script src="<?php echo TEMPLATE_URL; ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>

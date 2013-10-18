@@ -182,6 +182,11 @@ function getCategoryNiceName ( $cat_id ) {
     return $category_nicename;
 }
 
+function getCategoryName ( $cat_id ) {
+    $cat = get_category($cat_id);
+    return  $cat->cat_name;
+}
+
 /*
     This method return VIDEO URL, already for embed
     @param $data - Array with   /site -> youtube, vimeo ...
