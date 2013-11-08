@@ -10,10 +10,10 @@ foreach($pictures AS $pic) {
   echo "<li>";
   if ($pic->description) {
     echo "<a href=\"$pic->description\" target=\"_blank\" title=\"$pic->alttext\">";
-    echo "<img src=\"$url\" width=\"$width\" height=\"$height\" alt=\"$pic->alttext\" title=\"$pic->alttext\" />"
+    echo "<img src=\"$url\" width=\"$width\" height=\"$height\" alt=\"$pic->alttext\" title=\"$pic->alttext\" />";
     echo "</a>";
   } else {
-    echo "<img src=\"$url\" width=\"$width\" height=\"$height\" alt=\"$pic->alttext\" title=\"$pic->alttext\" />"
+    echo "<img src=\"$url\" width=\"$width\" height=\"$height\" alt=\"$pic->alttext\" title=\"$pic->alttext\" />";
   }
   echo "</li>";
 }
